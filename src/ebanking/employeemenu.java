@@ -34,9 +34,9 @@ public class employeemenu extends javax.swing.JFrame {
         deleteacc = new javax.swing.JButton();
         depmoney = new javax.swing.JButton();
         newemployee = new javax.swing.JButton();
-        newemployee1 = new javax.swing.JButton();
-        newemployee2 = new javax.swing.JButton();
-        newemployee3 = new javax.swing.JButton();
+        fixeddeposit = new javax.swing.JButton();
+        deleteemployee = new javax.swing.JButton();
+        loan = new javax.swing.JButton();
         EXIT = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
@@ -101,35 +101,35 @@ public class employeemenu extends javax.swing.JFrame {
         getContentPane().add(newemployee);
         newemployee.setBounds(80, 510, 273, 49);
 
-        newemployee1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        newemployee1.setText("Fixed Deposit");
-        newemployee1.addActionListener(new java.awt.event.ActionListener() {
+        fixeddeposit.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        fixeddeposit.setText("Fixed Deposit");
+        fixeddeposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newemployee1ActionPerformed(evt);
+                fixeddepositActionPerformed(evt);
             }
         });
-        getContentPane().add(newemployee1);
-        newemployee1.setBounds(490, 510, 273, 49);
+        getContentPane().add(fixeddeposit);
+        fixeddeposit.setBounds(490, 510, 273, 49);
 
-        newemployee2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        newemployee2.setText("Delete Employee");
-        newemployee2.addActionListener(new java.awt.event.ActionListener() {
+        deleteemployee.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        deleteemployee.setText("Delete Employee");
+        deleteemployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newemployee2ActionPerformed(evt);
+                deleteemployeeActionPerformed(evt);
             }
         });
-        getContentPane().add(newemployee2);
-        newemployee2.setBounds(80, 590, 273, 49);
+        getContentPane().add(deleteemployee);
+        deleteemployee.setBounds(80, 590, 273, 49);
 
-        newemployee3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        newemployee3.setText("Loan");
-        newemployee3.addActionListener(new java.awt.event.ActionListener() {
+        loan.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        loan.setText("Loan");
+        loan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newemployee3ActionPerformed(evt);
+                loanActionPerformed(evt);
             }
         });
-        getContentPane().add(newemployee3);
-        newemployee3.setBounds(490, 590, 273, 49);
+        getContentPane().add(loan);
+        loan.setBounds(490, 590, 273, 49);
 
         EXIT.setBackground(new java.awt.Color(255, 0, 51));
         EXIT.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -159,6 +159,10 @@ public class employeemenu extends javax.swing.JFrame {
 
     private void cusacdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusacdetailsActionPerformed
         // TODO add your handling code here:
+        Showaccdetails info = new Showaccdetails();
+        info.setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_cusacdetailsActionPerformed
 
     private void deleteaccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteaccActionPerformed
@@ -171,6 +175,9 @@ public class employeemenu extends javax.swing.JFrame {
 
     private void depmoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depmoneyActionPerformed
         // TODO add your handling code here:
+        DepositMoney info = new DepositMoney();
+        info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_depmoneyActionPerformed
 
     private void newemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newemployeeActionPerformed
@@ -180,17 +187,28 @@ public class employeemenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_newemployeeActionPerformed
 
-    private void newemployee1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newemployee1ActionPerformed
+    private void fixeddepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fixeddepositActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_newemployee1ActionPerformed
+        jfixeddeposit info = new jfixeddeposit();
+        info.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_fixeddepositActionPerformed
 
-    private void newemployee2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newemployee2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newemployee2ActionPerformed
+    private void deleteemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteemployeeActionPerformed
+        
+        Deleteemployee info = new Deleteemployee();
+        info.setVisible(true);
+        dispose();
 
-    private void newemployee3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newemployee3ActionPerformed
+// TODO add your handling code here:
+    }//GEN-LAST:event_deleteemployeeActionPerformed
+
+    private void loanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_newemployee3ActionPerformed
+        loan info = new loan();
+        info.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_loanActionPerformed
 
     private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
         // TODO add your handling code here:
@@ -237,13 +255,13 @@ public class employeemenu extends javax.swing.JFrame {
     private javax.swing.JButton addaccount;
     private javax.swing.JButton cusacdetails;
     private javax.swing.JButton deleteacc;
+    private javax.swing.JButton deleteemployee;
     private javax.swing.JButton depmoney;
+    private javax.swing.JButton fixeddeposit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton loan;
     private javax.swing.JButton newemployee;
-    private javax.swing.JButton newemployee1;
-    private javax.swing.JButton newemployee2;
-    private javax.swing.JButton newemployee3;
     // End of variables declaration//GEN-END:variables
 }
