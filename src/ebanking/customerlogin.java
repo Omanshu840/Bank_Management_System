@@ -42,22 +42,36 @@ public class customerlogin extends javax.swing.JFrame {
         EXIT = new javax.swing.JButton();
         LogIn = new javax.swing.JButton();
         Back = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jpassword.setText("jPasswordField1");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Pictures\\netbeans\\logo2.PNG")); // NOI18N
+        jpassword.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(jpassword);
+        jpassword.setBounds(450, 480, 294, 42);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(797, 208, 0, 0);
 
         jLabel2.setFont(new java.awt.Font("Bernard MT Condensed", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 0));
         jLabel2.setText("Customer Login");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(40, 250, 378, 57);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("Pin Number");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(100, 480, 211, 43);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel4.setText("Account No.");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(90, 390, 218, 43);
+
+        jtxtacnumber.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(jtxtacnumber);
+        jtxtacnumber.setBounds(450, 390, 294, 42);
 
         EXIT.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         EXIT.setText("EXIT");
@@ -66,6 +80,8 @@ public class customerlogin extends javax.swing.JFrame {
                 EXITActionPerformed(evt);
             }
         });
+        getContentPane().add(EXIT);
+        EXIT.setBounds(670, 580, 76, 49);
 
         LogIn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         LogIn.setText("LOG IN");
@@ -74,6 +90,8 @@ public class customerlogin extends javax.swing.JFrame {
                 LogInActionPerformed(evt);
             }
         });
+        getContentPane().add(LogIn);
+        LogIn.setBounds(240, 580, 106, 49);
 
         Back.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         Back.setText("BACK");
@@ -82,60 +100,13 @@ public class customerlogin extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
+        getContentPane().add(Back);
+        Back.setBounds(440, 580, 87, 49);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(LogIn))
-                        .addGap(146, 146, 146)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Back)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(EXIT))
-                            .addComponent(jpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtacnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(22, 22, 22)
-                    .addComponent(jLabel2)
-                    .addContainerGap(427, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(117, 117, 117)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtacnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EXIT)
-                    .addComponent(Back)
-                    .addComponent(LogIn))
-                .addGap(21, 21, 21))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(196, 196, 196)
-                    .addComponent(jLabel2)
-                    .addContainerGap(310, Short.MAX_VALUE)))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ebanking/Webp.net-resizeimage (2).jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(30, 20, 725, 190);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -240,6 +211,7 @@ public class customerlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField jpassword;
     private javax.swing.JTextField jtxtacnumber;
     // End of variables declaration//GEN-END:variables

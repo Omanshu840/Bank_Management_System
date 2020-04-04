@@ -33,6 +33,7 @@ public class employeelogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
         jpassword = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,22 +45,44 @@ public class employeelogin extends javax.swing.JFrame {
         Back = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jtxtempname = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ebanking/Webp.net-resizeimage (2).jpg"))); // NOI18N
+        jLabel6.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jpassword.setText("jPasswordField1");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Pictures\\netbeans\\logo2.PNG")); // NOI18N
+        jpassword.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        jpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jpassword);
+        jpassword.setBounds(450, 520, 294, 42);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(749, 208, 0, 170);
 
         jLabel2.setFont(new java.awt.Font("Bernard MT Condensed", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 0));
         jLabel2.setText("Employee Login");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(40, 230, 381, 57);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("Password");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(130, 520, 171, 43);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel4.setText("Employee Code");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(100, 370, 281, 43);
+
+        jtxtempcode.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(jtxtempcode);
+        jtxtempcode.setBounds(450, 370, 294, 42);
 
         EXIT.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         EXIT.setText("EXIT");
@@ -68,6 +91,8 @@ public class employeelogin extends javax.swing.JFrame {
                 EXITActionPerformed(evt);
             }
         });
+        getContentPane().add(EXIT);
+        EXIT.setBounds(399, 626, 76, 49);
 
         LogIn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         LogIn.setText("LOG IN");
@@ -76,6 +101,8 @@ public class employeelogin extends javax.swing.JFrame {
                 LogInActionPerformed(evt);
             }
         });
+        getContentPane().add(LogIn);
+        LogIn.setBounds(140, 626, 106, 49);
 
         Back.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         Back.setText("BACK");
@@ -84,69 +111,22 @@ public class employeelogin extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
+        getContentPane().add(Back);
+        Back.setBounds(660, 620, 87, 49);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel5.setText("Employee name");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(100, 450, 291, 43);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel4))
-                                    .addGap(64, 64, 64))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(96, 96, 96)
-                                    .addComponent(LogIn)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtxtempcode, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtxtempname, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(EXIT))
-                                .addComponent(Back, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtempcode, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtempname, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LogIn)
-                    .addComponent(EXIT)
-                    .addComponent(Back))
-                .addGap(32, 32, 32))
-        );
+        jtxtempname.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(jtxtempname);
+        jtxtempname.setBounds(450, 450, 294, 42);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ebanking/Webp.net-resizeimage (2).jpg"))); // NOI18N
+        jLabel7.setText("jLabel5");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(30, 20, 725, 190);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -211,6 +191,10 @@ public class employeelogin extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BackActionPerformed
 
+    private void jpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -255,6 +239,8 @@ public class employeelogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jpassword;
     private javax.swing.JTextField jtxtempcode;
     private javax.swing.JTextField jtxtempname;
