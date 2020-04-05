@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 package ebanking;
+import javax.swing.JOptionPane;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -27,21 +33,377 @@ public class addnewaccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jtxtname = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        generateaccno = new javax.swing.JButton();
+        Add = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+        jtxtdob = new javax.swing.JTextField();
+        jtxtaddress = new javax.swing.JTextField();
+        jtxtgender = new javax.swing.JTextField();
+        jtxtbalance = new javax.swing.JTextField();
+        jtxtcardno = new javax.swing.JTextField();
+        jtxtpinno = new javax.swing.JTextField();
+        jtxtaccno = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ebanking/Webp.net-resizeimage (2).jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+
+        jLabel2.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 0));
+        jLabel2.setText("Customer Details");
+
+        jLabel3.setFont(new java.awt.Font("Bernard MT Condensed", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 0));
+        jLabel3.setText("Add New Account");
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel4.setText("Pin Number");
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel6.setText("Address");
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel7.setText("Date of Birth");
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel8.setText("Gender");
+
+        jtxtname.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtnameActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel9.setText("Name");
+
+        jLabel10.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 102, 0));
+        jLabel10.setText("Account Details");
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel11.setText("Balance");
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel12.setText("Card Number");
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel13.setText("Account No.");
+
+        generateaccno.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        generateaccno.setText("Generate A/c No.");
+        generateaccno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateaccnoActionPerformed(evt);
+            }
+        });
+
+        Add.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        Add.setText("ADD");
+        Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddActionPerformed(evt);
+            }
+        });
+
+        back.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
+        jtxtdob.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtdob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtdobActionPerformed(evt);
+            }
+        });
+
+        jtxtaddress.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtaddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtaddressActionPerformed(evt);
+            }
+        });
+
+        jtxtgender.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtgender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtgenderActionPerformed(evt);
+            }
+        });
+
+        jtxtbalance.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtbalance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtbalanceActionPerformed(evt);
+            }
+        });
+
+        jtxtcardno.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtcardno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtcardnoActionPerformed(evt);
+            }
+        });
+
+        jtxtpinno.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtpinno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtpinnoActionPerformed(evt);
+            }
+        });
+
+        jtxtaccno.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jtxtaccno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtaccnoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(199, 199, 199))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(129, 129, 129)
+                                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jtxtname, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jtxtdob, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(61, 61, 61)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel12)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel4)
+                                                    .addGap(3, 3, 3)))))
+                                    .addComponent(jtxtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtxtbalance, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtxtcardno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtxtpinno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtxtaccno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6))
+                            .addComponent(jtxtgender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(generateaccno))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(30, 30, 30)
+                    .addComponent(jLabel3)
+                    .addContainerGap(397, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jtxtaccno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel10))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtxtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel4)
+                    .addComponent(jtxtpinno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel12)
+                    .addComponent(jtxtdob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtcardno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel11)
+                    .addComponent(jtxtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtbalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jtxtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(generateaccno)
+                    .addComponent(Add)
+                    .addComponent(back))
+                .addGap(18, 18, 18))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(219, 219, 219)
+                    .addComponent(jLabel3)
+                    .addContainerGap(392, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtxtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtnameActionPerformed
+
+    private void generateaccnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateaccnoActionPerformed
+
+        try
+        {
+            int f = 0;
+            int cardno = 0;
+            int pinno = 0;
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/omibbank","root","");
+            Statement stmt = con.createStatement();
+            String query = "select * from newaccount;";
+            ResultSet rss = stmt.executeQuery(query);
+            while(rss.next())
+            {
+                int accountn = rss.getInt("AccountNo");
+                cardno = rss.getInt("CardNumber");
+                pinno = rss.getInt("PinNumber");
+                f = accountn;
+            }
+            
+            int newacnumber = f+1;
+            int newpinno = pinno+1;
+            int newcardno = cardno+1;
+            
+            jtxtaccno.setText(""+newacnumber);
+            jtxtpinno.setText(""+newpinno);
+            jtxtcardno.setText(""+newcardno);
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
+        }
+    }//GEN-LAST:event_generateaccnoActionPerformed
+
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+        // TODO add your handling code here:
+        try
+        {
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/omibbank","root","");
+            Statement stmt = con.createStatement();
+            String name = jtxtname.getText();
+            String dob = jtxtdob.getText();
+            String add = jtxtaddress.getText();
+            String gender = jtxtgender.getText();
+          
+            int acn = Integer.parseInt(jtxtaccno.getText());
+            int pin = Integer.parseInt(jtxtpinno.getText());
+            int cno = Integer.parseInt(jtxtcardno.getText());
+            int bal = Integer.parseInt(jtxtbalance.getText());
+            
+            String query = "Insert into newaccount values('"+name+"','"+dob+"','"+add+"','"+gender+"','"+acn+"','"+pin+"','"+cno+"','"+bal+"');";
+            stmt.execute(query);
+            JOptionPane.showMessageDialog(null, "Account Successfully created");
+            
+            jtxtname.setText("");
+            jtxtdob.setText("");
+            jtxtaddress.setText("");
+            jtxtgender.setText("");
+            jtxtaccno.setText("");
+            jtxtpinno.setText("");
+            jtxtcardno.setText("");
+            jtxtbalance.setText("");
+            
+            stmt.close();
+            con.close();
+            
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
+        }
+        
+    }//GEN-LAST:event_AddActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        employeemenu info = new employeemenu();
+        info.setVisible(true);
+        
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
+
+    private void jtxtdobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtdobActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtxtdobActionPerformed
+
+    private void jtxtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtaddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtaddressActionPerformed
+
+    private void jtxtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtgenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtgenderActionPerformed
+
+    private void jtxtbalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtbalanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtbalanceActionPerformed
+
+    private void jtxtcardnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtcardnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtcardnoActionPerformed
+
+    private void jtxtpinnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtpinnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtpinnoActionPerformed
+
+    private void jtxtaccnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtaccnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtaccnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +441,28 @@ public class addnewaccount extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add;
+    private javax.swing.JButton back;
+    private javax.swing.JButton generateaccno;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jtxtaccno;
+    private javax.swing.JTextField jtxtaddress;
+    private javax.swing.JTextField jtxtbalance;
+    private javax.swing.JTextField jtxtcardno;
+    private javax.swing.JTextField jtxtdob;
+    private javax.swing.JTextField jtxtgender;
+    private javax.swing.JTextField jtxtname;
+    private javax.swing.JTextField jtxtpinno;
     // End of variables declaration//GEN-END:variables
 }

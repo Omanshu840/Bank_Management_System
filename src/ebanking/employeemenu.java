@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 package ebanking;
+import javax.swing.JOptionPane;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -41,15 +47,10 @@ public class employeemenu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(760, 12, 0, 0);
 
         jLabel2.setFont(new java.awt.Font("Bernard MT Condensed", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 0));
         jLabel2.setText("Employee Main Menu");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 230, 511, 57);
 
         addaccount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         addaccount.setText("Add Account");
@@ -58,8 +59,6 @@ public class employeemenu extends javax.swing.JFrame {
                 addaccountActionPerformed(evt);
             }
         });
-        getContentPane().add(addaccount);
-        addaccount.setBounds(80, 340, 273, 49);
 
         cusacdetails.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         cusacdetails.setText("Customer A/c Details");
@@ -68,8 +67,6 @@ public class employeemenu extends javax.swing.JFrame {
                 cusacdetailsActionPerformed(evt);
             }
         });
-        getContentPane().add(cusacdetails);
-        cusacdetails.setBounds(490, 340, 273, 49);
 
         deleteacc.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         deleteacc.setText("Delete Account");
@@ -78,8 +75,6 @@ public class employeemenu extends javax.swing.JFrame {
                 deleteaccActionPerformed(evt);
             }
         });
-        getContentPane().add(deleteacc);
-        deleteacc.setBounds(80, 420, 273, 49);
 
         depmoney.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         depmoney.setText("Deposit Money");
@@ -88,8 +83,6 @@ public class employeemenu extends javax.swing.JFrame {
                 depmoneyActionPerformed(evt);
             }
         });
-        getContentPane().add(depmoney);
-        depmoney.setBounds(490, 420, 273, 49);
 
         newemployee.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         newemployee.setText("Add New Employee");
@@ -98,8 +91,6 @@ public class employeemenu extends javax.swing.JFrame {
                 newemployeeActionPerformed(evt);
             }
         });
-        getContentPane().add(newemployee);
-        newemployee.setBounds(80, 510, 273, 49);
 
         fixeddeposit.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         fixeddeposit.setText("Fixed Deposit");
@@ -108,8 +99,6 @@ public class employeemenu extends javax.swing.JFrame {
                 fixeddepositActionPerformed(evt);
             }
         });
-        getContentPane().add(fixeddeposit);
-        fixeddeposit.setBounds(490, 510, 273, 49);
 
         deleteemployee.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         deleteemployee.setText("Delete Employee");
@@ -118,8 +107,6 @@ public class employeemenu extends javax.swing.JFrame {
                 deleteemployeeActionPerformed(evt);
             }
         });
-        getContentPane().add(deleteemployee);
-        deleteemployee.setBounds(80, 590, 273, 49);
 
         loan.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         loan.setText("Loan");
@@ -128,8 +115,6 @@ public class employeemenu extends javax.swing.JFrame {
                 loanActionPerformed(evt);
             }
         });
-        getContentPane().add(loan);
-        loan.setBounds(490, 590, 273, 49);
 
         EXIT.setBackground(new java.awt.Color(255, 0, 51));
         EXIT.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -139,13 +124,75 @@ public class employeemenu extends javax.swing.JFrame {
                 EXITActionPerformed(evt);
             }
         });
-        getContentPane().add(EXIT);
-        EXIT.setBounds(690, 660, 76, 49);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ebanking/Webp.net-resizeimage (2).jpg"))); // NOI18N
         jLabel7.setText("jLabel5");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(40, 20, 725, 190);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(760, 760, 760)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel2))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(addaccount, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
+                .addComponent(cusacdetails, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(deleteacc, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
+                .addComponent(depmoney, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(newemployee, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
+                .addComponent(fixeddeposit, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(deleteemployee, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
+                .addComponent(loan, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(690, 690, 690)
+                .addComponent(EXIT))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addaccount)
+                    .addComponent(cusacdetails))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deleteacc)
+                    .addComponent(depmoney))
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newemployee)
+                    .addComponent(fixeddeposit))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deleteemployee)
+                    .addComponent(loan))
+                .addGap(21, 21, 21)
+                .addComponent(EXIT))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
