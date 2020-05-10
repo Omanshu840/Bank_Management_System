@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 package ebanking;
+import javax.swing.JOptionPane;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -319,29 +325,27 @@ public class deleteaccount extends javax.swing.JFrame {
 
         try
         {
-            int f = 0;
-            int cardno = 0;
-            int pinno = 0;
+            
+            String u = "";
+            String p = "";
+            String a = "";
+            String g = "";
+            int pi = 0;
+            int cd = 0;
+            
             Class.forName("java.sql.Driver");
-            deletenection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/omibbank","root","");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/omibbank","root","");
             Statement stmt = con.createStatement();
-            String query = "select * from newaccount;";
-            ResultSet rss = stmt.executeQuery(query);
-            while(rss.next())
+            int acno = Integer.parseInt(jtxtaccno.getText());
+            String query = "select * from newaccount where AccountNo="+accno+"; ";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
             {
-                int accountn = rss.getInt("AccountNo");
-                cardno = rss.getInt("CardNumber");
-                pinno = rss.getInt("PinNumber");
-                f = accountn;
+                u = rs.getString("Name");
+                p = rs.getString("DOB");
+                a = rs.getString("Adress");
             }
-
-            int newacnumber = f+1;
-            int newpinno = pinno+1;
-            int newcardno = cardno+1;
-
-            jtxtaccno.setText(""+newacnumber);
-            jtxtpinno.setText(""+newpinno);
-            jtxtcardno.setText(""+newcardno);
+            
         }
         catch(Exception e)
         {
