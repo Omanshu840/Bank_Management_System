@@ -344,7 +344,7 @@ public class addnewaccount extends javax.swing.JFrame {
             int cno = Integer.parseInt(jtxtcardno.getText());
             int bal = Integer.parseInt(jtxtbalance.getText());
             
-            String query = "Insert into newaccount values('"+name+"','"+dob+"','"+add+"','"+gender+"','"+acn+"','"+pin+"','"+cno+"','"+bal+"');";
+            String query = "Insert into newaccount(Name, DOB, Adress, Gender, AccountNo, PinNumber, CardNumber, balance) values('"+name+"','"+dob+"','"+add+"','"+gender+"',"+acn+","+pin+","+cno+","+bal+");";
             stmt.execute(query);
             JOptionPane.showMessageDialog(null, "Account Successfully created");
             

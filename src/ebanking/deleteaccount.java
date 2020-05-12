@@ -5,7 +5,6 @@
  */
 package ebanking;
 import javax.swing.JOptionPane;
-import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -337,14 +336,24 @@ public class deleteaccount extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/omibbank","root","");
             Statement stmt = con.createStatement();
             int acno = Integer.parseInt(jtxtaccno.getText());
-            String query = "select * from newaccount where AccountNo="+accno+"; ";
+            String query = "select * from newaccount where AccountNo="+acno+"; ";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
                 u = rs.getString("Name");
                 p = rs.getString("DOB");
                 a = rs.getString("Adress");
+                g = rs.getString("Gender");
+                pi = rs.getInt("PinNumber");
+                cd = rs.getInt("CardNumber");
             }
+            
+            jtxtname.setText((u));
+            jtxtdob.setText(p);
+            jtxtaddress.setText(a);
+            jtxtgender.setText(g);
+            jtxtpinno.setText(""+pi);
+            jtxtcardno.setText(""+cd);
             
         }
         catch(Exception e)
@@ -360,29 +369,12 @@ public class deleteaccount extends javax.swing.JFrame {
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/omibbank","root","");
             Statement stmt = con.createStatement();
-            String name = jtxtname.getText();
-            String dob = jtxtdob.getText();
-            String add = jtxtaddress.getText();
-            String gender = jtxtgender.getText();
-
-            int acn = Integer.parseInt(jtxtaccno.getText());
-            int pin = Integer.parseInt(jtxtpinno.getText());
-            int cno = Integer.parseInt(jtxtcardno.getText());
-            int bal = Integer.parseInt(jtxtbalance.getText());
-
-            String query = "Insert into newaccount values('"+name+"','"+dob+"','"+add+"','"+gender+"','"+acn+"','"+pin+"','"+cno+"','"+bal+"');";
-            stmt.execute(query);
-            JOptionPane.showMessageDialog(null, "Account Successfully created");
-
-            jtxtname.setText("");
-            jtxtdob.setText("");
-            jtxtaddress.setText("");
-            jtxtgender.setText("");
-            jtxtaccno.setText("");
-            jtxtpinno.setText("");
-            jtxtcardno.setText("");
-            jtxtbalance.setText("");
-
+            
+            int acno = Integer.parseInt(jtxtaccno.getText());
+            String query = "delete from newaccount where AccountNo="+acno+";";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Account Successfully deleted");
+            
             stmt.close();
             con.close();
 
